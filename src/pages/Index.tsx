@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Navigation from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -30,7 +31,9 @@ const Index = () => {
     { id: 1, title: 'Закат над морем', technique: 'Масло', size: '60x80 см', image: 'https://cdn.poehali.dev/projects/0b12d4cd-2c3c-4b2c-bb7a-323664aa5852/files/1d2bafe6-6925-4f82-b2b6-68feb107f647.jpg' },
     { id: 2, title: 'Весенние цветы', technique: 'Акварель', size: '40x50 см', image: 'https://cdn.poehali.dev/projects/0b12d4cd-2c3c-4b2c-bb7a-323664aa5852/files/922e2053-35a0-484c-979e-6d60e7d7e1c9.jpg' },
     { id: 3, title: 'Городской пейзаж', technique: 'Акрил', size: '70x90 см', image: 'https://cdn.poehali.dev/projects/0b12d4cd-2c3c-4b2c-bb7a-323664aa5852/files/ea172904-6dfd-44e7-9554-6ddc3b690fae.jpg' },
-    { id: 4, title: 'Абстракция', technique: '3D', size: '50x70 см', image: '' }
+    { id: 4, title: 'Абстракция в движении', technique: '3D', size: '50x70 см', image: 'https://cdn.poehali.dev/projects/0b12d4cd-2c3c-4b2c-bb7a-323664aa5852/files/c0e101f6-ee3b-4e34-b890-a6a61ffe6d5a.jpg' },
+    { id: 5, title: 'Лавандовое поле', technique: 'Масло', size: '80x100 см', image: 'https://cdn.poehali.dev/projects/0b12d4cd-2c3c-4b2c-bb7a-323664aa5852/files/cb6db077-7d74-49ec-934d-c3029ad63ac6.jpg' },
+    { id: 6, title: 'Неоновая абстракция', technique: 'Акрил', size: '90x120 см', image: 'https://cdn.poehali.dev/projects/0b12d4cd-2c3c-4b2c-bb7a-323664aa5852/files/f9705733-c3cc-4b74-81f4-822700fd6794.jpg' }
   ];
 
   const masters = [
@@ -51,6 +54,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
+      <Navigation />
       <section className="relative h-screen flex items-center justify-center bg-gradient-to-br from-primary/20 via-background to-secondary/20 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-10 w-64 h-64 bg-primary rounded-full blur-3xl"></div>
@@ -107,7 +111,7 @@ const Index = () => {
           <p className="text-center text-muted-foreground mb-12 text-lg">
             Примеры наших работ в разных техниках
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {portfolio.map((work, index) => (
               <Card 
                 key={work.id} 
